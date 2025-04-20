@@ -19,31 +19,54 @@ Before creating the docker-compose.yml, ensure that you have dockerfiles created
 add the following code to the docker-compose.yml file
 
 services:
+
   redis:
+  
     image: redis
+    
     ports:
+    
       - '6379:6379'
+      
   web1:
+  
     restart: on-failure
+    
     build: ./web
+    
     hostname: web1
+    
     ports:
+    
       - '81:5000'
+      
   web2:
+  
     restart: on-failure
+    
     build: ./web
+    
     hostname: web2
+    
     ports:
+    
       - '82:5000'
+      
   nginx:
+  
     build: ./nginx
+    
     ports:
+    
     - '80:80'
+    
     depends_on:
+    
     - web1
+    
     - web2
 
-    Heey dont freak out..lets dive into some explanation of whats going on above....
+Heey dont freak out..lets dive into some explanation of whats going on above....
 
 1)The top-level services field is where you define the containers that your app requires.
 
@@ -82,9 +105,10 @@ Call docker compose up to start all the services in your docker-compose.yml file
 
    ![image](https://github.com/user-attachments/assets/4e67652a-63da-46d5-a40d-04304e10cdf3)
 
-In another section, we will dive more into more docker compose examples using real world scenarios like
+In a different section, we will dive more into more docker compose examples using real world scenarios like;
 
 1)WordPress (Apache/PHP and MySQL) with Docker Compose
+
 2)Prometheus and Grafana with Docker Compose
 
 But for now, lets check on our next tutorial ---Container orchestration. Docker run and docker compose up will not be enough to manage multiple containers in different hosts. And that takes us to the next topic on using Docker swarm and kubernetes(k8s). we will dive in both and see how they work! see you!
