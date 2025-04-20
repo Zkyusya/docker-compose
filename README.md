@@ -82,9 +82,12 @@ Call docker compose up to start all the services in your docker-compose.yml file
 
    ![image](https://github.com/user-attachments/assets/4e67652a-63da-46d5-a40d-04304e10cdf3)
 
+In another section, we will dive more into more docker compose examples using real world scenarios like
 
+1)WordPress (Apache/PHP and MySQL) with Docker Compose
+2)Prometheus and Grafana with Docker Compose
 
-
+But for now, lets check on our next tutorial ---Container orchestration. Docker run and docker compose up will not be enough to manage multiple containers in different hosts. And that takes us to the next topic on using Docker swarm and kubernetes(k8s). we will dive in both and see how they work! see you!
 
 
 
